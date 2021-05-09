@@ -35,7 +35,7 @@ def main(args):
     num_model = "B0"
 
     data_transform = {
-        "train": transforms.Compose([transforms.RandomResizedCrop(img_size[num_model]),
+        "train": transforms.Compose([transforms.Resize(img_size[num_model]),
                                      transforms.RandomHorizontalFlip(),
                                      transforms.ToTensor(),
                                      transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])]),
@@ -129,7 +129,7 @@ if __name__ == '__main__':
     # 数据集所在根目录
     # http://download.tensorflow.org/example_images/flower_photos.tgz
     parser.add_argument('--data-path', type=str,
-                        default="/data/flower_photos")
+                        default="/data/Chinese herbal medicine photo")
 
     # download model weights
     # 链接: https://pan.baidu.com/s/1ouX0UmjCsmSx3ZrqXbowjw  密码: 090i
